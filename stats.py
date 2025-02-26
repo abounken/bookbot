@@ -3,6 +3,10 @@ def get_word_count(book_output):
     return len(word_count)
 
 def get_text_count(book_output):
-    for words in book_output.lower():
-        
-        return len(words)
+    characters = {}
+    for char in book_output.lower():
+        if char not in characters:
+            characters[char] = 1
+        else:
+            characters[char] += 1
+    return characters
