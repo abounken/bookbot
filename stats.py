@@ -9,4 +9,9 @@ def get_text_count(book_output):
             characters[char] = 1
         else:
             characters[char] += 1
-    return characters
+    return sort_text_count(characters)
+
+def sort_text_count(characters):
+    char_list = list(characters.items())
+    sorted_chars = sorted(char_list, key=lambda item: item[1], reverse=True)
+    return sorted_chars
